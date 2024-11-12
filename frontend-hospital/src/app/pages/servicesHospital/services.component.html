@@ -1,0 +1,335 @@
+<div class="banner-container">
+
+    <div class="--img">
+        <img src="https://hongngochospital.vn/undefined/400/image-thumb__400__1920/Frame%20427319817.fd8e9547.png"
+            alt="Banner" title="" class="banner-image">
+    </div>
+    <div class="overlay-div">
+        <div class="container-fluid">
+            <h1 class="--title">
+                Danh sách dịch vụ
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a class="--link" href="/">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Dịch vụ
+                    </li>
+                </ol>
+            </nav>
+
+        </div>
+    </div>
+</div>
+
+<div class="serviceContent">
+    <div class="container-fluid">
+        <div class="row" id="service-listing-ajax">
+            <div class="col-md-3">
+                <form class="--search" id="service-search-form">
+                    <input class="form-control form-control-lg" type="text" placeholder="Tìm kiếm" name="service-search" id="service-search">
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                      </svg></button>
+                </form>
+                <div class="row" id="load-ajax">
+                        <button *ngFor="let major of major" class ="choice" id="id" type="button" role="tab">
+                            <div class="alert alert-success" role="alert">
+                                {{major.name}}
+                              </div>
+                        </button>
+                        <!-- <button class ="choice" id="id" type="button" role="tab">
+                            <div class="alert alert-success" role="alert">
+                                Tên khoa
+                              </div>
+                        </button>
+
+                        <button class ="choice" id="id" type="button" role="tab">
+                            <div class="alert alert-success" role="alert">
+                                Tên khoa
+                              </div>
+                        </button>
+
+                        <button class ="choice" id="id" type="button" role="tab">
+                            <div class="alert alert-success" role="alert">
+                                Tên khoa
+                              </div>
+                        </button>
+
+                        <button class ="choice" id="id" type="button" role="tab">
+                            <div class="alert alert-success" role="alert">
+                                Tên khoa
+                              </div>
+                        </button>
+
+                        <button class ="choice" id="id" type="button" role="tab">
+                            <div class="alert alert-success" role="alert">
+                                Tên khoa
+                              </div>
+                        </button>
+
+                        <button class ="choice" id="id" type="button" role="tab">
+                            <div class="alert alert-success" role="alert">
+                                Tên khoa
+                              </div>
+                        </button> -->
+                </div>
+            </div>
+
+            <div class="col-md-9" id="load-ajax-view">
+                <div class="tab-content" id="tabServiceContent">
+                    <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+                        <div class="product-grid">
+                            <div *ngFor ="let services of services " class="product">
+                                <div class ="treatment-card ">
+                                    <a href="#" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/60164/image-thumb__60164__image720px/%E1%BA%A3nh%20m%E1%BA%B7c%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%83n%20th%E1%BB%8B.fa8266dd.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                {{services.name}}
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <!-- <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/80196/image-thumb__80196__image720px/271_c%E1%BA%AFt%20m%C3%AD%20%20416x290.de6ad507.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Cắt mí
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/71241/image-thumb__71241__image720px/Hi%E1%BB%83n%20th%E1%BB%8B%20DV%20290%20200_1.97a53e61.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Chụp CT Phổi Liều Thấp
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/74414/image-thumb__74414__image720px/Da%20li%E1%BB%85u.c014aaeb.png">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Điều trị nhám , tàng nhang
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/83151/image-thumb__83151__image720px/39_web416x290.39c7ac08.png">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Điều trị mụn 
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/D%E1%BB%8Bch%20v%E1%BB%A5/Ngo%E1%BA%A1i%20khoa/79963/image-thumb__79963__image720px/PT-tiet-nieu-NH.77686b68.png">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Phẫu thuật tiết niệu, Nam khoa
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/79933/image-thumb__79933__image720px/t%E1%BA%A1o%20h%C3%ACnh%20th%C3%A0nh%20b%E1%BB%A5ng.dc47ec52.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Thẩm mỹ khác
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/80218/image-thumb__80218__image720px/5_10.ee831fe8.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Tầm soát ung thư tuyến tiền liệt
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/80225/image-thumb__80225__image720px/k.80498698.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Tầm soát ung thư vú
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/80231/image-thumb__80231__image720px/hk.7cf7b408.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Điều trị giảm đau ung thư
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/Chuy%C3%AAn%20khoa/ngoai/79969/image-thumb__79969__image720px/Kham-nam-khoa-BS.5c22079c.png">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Khám nam khoa
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/71130/image-thumb__71130__image720px/5_3.be11dcf5.png">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Phẫu thuật thay khớp gối
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/71091/image-thumb__71091__image720px/%E1%BA%A3nh%20n%E1%BB%95i%20b%E1%BA%ADt.95e4af62.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Test trắc nghiệm tâm lý
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+
+                            <div class="product">
+                                <div class ="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link" >
+                                            <img src="https://hongngochospital.vn/_default_upload_bucket/60172/image-thumb__60172__image720px/N%E1%BB%95i%20b%E1%BA%ADt.cc8c531b.png">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                Nội soi phế quản
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+      -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> 
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+a {
+    gap: 12px;
+}
+
+.container-fluid-private {
+  padding-left: 5%;
+  padding-right: 0;
+}
+// headers
+.header-top {
+    position: relative;
+    padding: 13px 0 13px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_header-top {
+    height: 125px;
+}
+
+.header-right {
+    width: calc(100% - 175px);
+}
+
+.header-bot {
+    margin-top: 8px;
+}
+
+.--bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom left;
+    // width: calc(100% + (100%) / 18);
+    width: 100%;
+}
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom left;
+}
+
+.--link {
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.--live {
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    animation: animation 3s infinite;
+    color: #fff;
+
+    padding: 0px 12px;
+    border: 1px solid #fff;
+    font-weight: bold;
+    height: 28px;
+}
+
+
+@keyframes animation {
+    0% {
+        box-shadow: 0 0 -10px #fff;
+    }
+
+    40% {
+        box-shadow: 0 0 20px #fff;
+    }
+    60% {
+        box-shadow: 0 0 20px #fff;
+    }
+    100% {
+        box-shadow: 0 0 -10px #fff;
+    }
+}
+
+.--logo {
+    width: 125px;
+}
+
+.--right {
+    gap: 20px;
+}
+.--language {
+    color: #fff;
+}
+.--button {
+    gap: 20px;
+}
+
+.--button a:first-child::after {
+    content: '';
+    position: absolute;
+    top: 34%;
+    left: 89%;
+    height: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.--item {
+    font-size: 140%;
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+    justify-content: center;
+}
+
+.--itemmenu {
+    height: 100%;
+}
+
+.--styleitem {
+    display: flex;
+    color: #000;
+    transition: all 0.15s ease;
+    height: 100%;
+}
+
+.--sub::after {
+    content: '\f107';
+    position: absolute;
+    font-size: 14px;
+}
+
+.--iconButton {
+    transform: translate(0, 20%);
+    padding-left: 4px;
+}
+
+.--search {
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+    height: 44px;
+    width: 44px;
+}
+
+input {
+    width: 100%;
+    opacity: 0;
+    height: 100%;
+    padding-left: 32px;
+    border: none;
+    padding-right: 16px;
+    pointer-events: none;
+}
+
+.bi-search {
+    top: 50%;
+    left: 50%;
+    transform: translate(86%, -206%);
+}
+
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width : 100%;
+}

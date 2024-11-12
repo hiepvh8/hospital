@@ -1,0 +1,97 @@
+.banner-container {
+    position: relative;
+    width: 100vw; /* Chiều rộng toàn màn hình */
+    overflow: hidden; /* Đảm bảo không có phần nào của ảnh vượt quá container */
+  }
+
+  .banner-image {
+    width: 100%; /* Ảnh sẽ chiếm toàn bộ chiều ngang */
+    height: auto; /* Giữ tỷ lệ của ảnh */
+    display: block; /* Đảm bảo ảnh không có khoảng trắng dư thừa */
+  }
+  .overlay-div {
+    position: absolute; /* Định vị tuyệt đối */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left:15%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%,-50%); /* Dịch chuyển để chính giữa */
+    background-color: rgba(255, 255, 255, 0); /* Nền mờ cho overlay */
+    color: rgba(124, 112, 112, 0.944); /* Màu chữ trắng */
+    padding: 20px; /* Khoảng cách bên trong */
+    text-align: center; /* Căn giữa chữ */
+    border-radius: 8px; /* Bo góc cho overlay */
+  }
+
+  .choice {
+    margin-bottom: 10px; /* Thêm khoảng cách giữa các dòng */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Mỗi dòng có 3 cột */
+    gap: 10px; /* Khoảng cách giữa các sản phẩm */
+  }
+  
+  .product {
+    background-color: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+
+  .image-container {
+    width: 100px; /* Cố định chiều rộng */
+    height: 100px; /* Cố định chiều cao */
+    overflow: hidden; /* Ẩn phần ảnh thừa nếu không vừa */
+    border: 1px solid #ccc; /* Viền cho dễ nhìn */
+    margin-bottom: 10px; /* Thêm khoảng cách giữa ảnh và text */
+}
+
+.image-container img {
+    width: 100%; /* Đặt chiều rộng ảnh bằng với chiều rộng của thẻ chứa */
+    height: 100%; /* Đặt chiều cao ảnh bằng với chiều cao của thẻ chứa */
+    object-fit: cover; /* Đảm bảo ảnh bao phủ hết thẻ chứa mà không bị méo */
+}
+
+.treatment-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px; /* Đặt chiều rộng tối đa cho thẻ */
+    text-align: center;
+}
+
+/* Chỉnh kích thước và căn giữa ảnh */
+.treatment-card img {
+    width: 100%; /* Đảm bảo ảnh rộng bằng với khung chứa */
+    height: auto;
+    border-bottom: 1px solid #ccc; /* Viền dưới ảnh */
+    margin-bottom: 15px;
+}
+
+/* Tiêu đề với font đậm và căn giữa */
+.treatment-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #006341;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+/* Đoạn mô tả */
+.treatment-description {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Căn chỉnh tiêu đề theo kiểu liên kết */
+.treatment-title-link {
+    color: #010509;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.treatment-title-link:hover {
+    text-decoration: underline;
+}

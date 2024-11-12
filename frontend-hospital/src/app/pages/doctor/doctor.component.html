@@ -1,0 +1,95 @@
+<div class="banner-container">
+
+    <div class="--img">
+        <img src="https://hongngochospital.vn/undefined/402/image-thumb__402__1920/Frame%20427319816.0b5aa7a7.png"
+            alt="Banner" title="" class="banner-image">
+    </div>
+    <div class="overlay-div">
+        <div class="container-fluid">
+            <h1 class="--title">
+                Danh sách bác sĩ
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a class="--link" href="/">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Danh sách bác sĩ
+                    </li>
+                </ol>
+            </nav>
+
+        </div>
+    </div>
+</div>
+
+<div class="serviceContent">
+    <div class="container-fluid">
+        <div class="row" id="service-listing-ajax">
+            <div class="col-md-3">
+                <form class="--search" id="service-search-form">
+                    <div class="--filter">
+                        <div class="--name">
+                            <img src="https://hongngochospital.vn/statics/img/filter.svg" alt="">
+                            Bộ lọc
+                        </div>
+
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Dịch vụ</option>
+                            <option *ngFor ="let services of services" [value] = "services.id">{{services.name}}</option>
+                          </select>
+                    </div>
+
+                    <input class="form-control form-control-lg" type="text" placeholder="Tìm kiếm" name="service-search"
+                        id="service-search">
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg></button>
+                </form>
+                <div class="row" id="load-ajax">
+
+                    <button *ngFor ="let major of major" class="choice" id="id" type="button" role="tab">
+                        <div class="alert alert-success" role="alert">
+                            {{major.name}}
+                        </div>
+                    </button>                 
+                </div>
+            </div>
+
+            <div class="col-md-9" id="load-ajax-view">
+                <div class="tab-content" id="tabServiceContent">
+                    <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+                        <div class="product-grid">
+                            <div *ngFor ="let doctor of doctor" class="product">
+                                <div class="treatment-card ">
+                                    <a href="/vi/cat-mi" class="treatment-title-link">
+                                        <div class="treatment-title-link">
+                                            <img
+                                                src="https://hongngochospital.vn/_default_upload_bucket/60164/image-thumb__60164__image720px/%E1%BA%A3nh%20m%E1%BA%B7c%20%C4%91%E1%BB%8Bnh%20hi%E1%BB%83n%20th%E1%BB%8B.fa8266dd.jpg">
+                                        </div>
+
+                                        <div class="treatment-title-link">
+                                            <h3>
+                                                {{doctor.fullname}}
+                                            </h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

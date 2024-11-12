@@ -1,0 +1,43 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Mỗi dòng có 3 cột */
+    gap: 10px; /* Khoảng cách giữa các sản phẩm */
+  }
+  
+  .product {
+    background-color: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+
+  .custom-h1 {
+    color: #000000; /* Màu đen đậm (in tối) */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 3rem; /* Điều chỉnh kích thước chữ tùy ý */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Đổ bóng chữ (tùy chọn)h
+     */
+  }
+
+  .banner-container {
+    position: relative;
+    width: 100vw; /* Chiều rộng toàn màn hình */
+    overflow: hidden; /* Đảm bảo không có phần nào của ảnh vượt quá container */
+  }
+
+  .banner-image {
+    width: 100%; /* Ảnh sẽ chiếm toàn bộ chiều ngang */
+    height: auto; /* Giữ tỷ lệ của ảnh */
+    display: block; /* Đảm bảo ảnh không có khoảng trắng dư thừa */
+  }
+  .overlay-div {
+    position: absolute; /* Định vị tuyệt đối */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left:15%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%,-50%); /* Dịch chuyển để chính giữa */
+    background-color: rgba(255, 255, 255, 0); /* Nền mờ cho overlay */
+    color: rgba(124, 112, 112, 0.944); /* Màu chữ trắng */
+    padding: 20px; /* Khoảng cách bên trong */
+    text-align: center; /* Căn giữa chữ */
+    border-radius: 8px; /* Bo góc cho overlay */
+  }
