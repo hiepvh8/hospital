@@ -12,5 +12,5 @@ RUN npm install
 # Copy toàn bộ mã nguồn vào container
 COPY . .
 
-# Build ứng dụng Angular
+# Build ứng dụng
 RUN npm run build --prod
