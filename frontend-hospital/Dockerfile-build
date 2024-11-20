@@ -9,10 +9,8 @@ WORKDIR /app
 # Copy package.json và package-lock.json vào container
 COPY package*.json ./
 
-# Cài đặt các dependency
+# Cài đặt các dependencies của dự án
 RUN npm install
-
-RUN npm install -g @angular/cli
 
 # Copy phần còn lại của mã nguồn
 COPY . .
