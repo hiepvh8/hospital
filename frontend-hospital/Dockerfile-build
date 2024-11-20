@@ -8,7 +8,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # Cài đặt các dependencies của dự án
-RUN npm install --omit=dev  # Hoặc npm install nếu bạn muốn cài cả devDependencies
+RUN npm install
+
+RUN npm install -g @angular/cli
 
 # Copy phần còn lại của mã nguồn
 COPY . .
@@ -16,6 +18,3 @@ COPY . .
 # Chạy build ứng dụng Angular và tạo thư mục dist/
 RUN npm run build --prod
 
-# Tạo thư mục output để lưu trữ sản phẩm build
-# Cấu hình outputPath trong angular.json sẽ quyết định vị trí lưu trữ trong dist/
-# Thường là dist/<project-name>
