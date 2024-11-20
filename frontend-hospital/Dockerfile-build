@@ -12,6 +12,8 @@ COPY package*.json ./
 # Cài đặt các dependency
 RUN npm install
 
+RUN npm install -g @angular/cli
+
 # Copy phần còn lại của mã nguồn
 COPY . .
 
