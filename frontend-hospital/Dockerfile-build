@@ -1,16 +1,19 @@
-# Build stage
-FROM node:18-alpine AS build
+FROM node:18.19-alpine
 
+# Cài đặt Angular CLI toàn cục
+RUN npm install -g @angular/cli
+
+# Chuyển đến thư mục ứng dụng trong container
 WORKDIR /app
 
-# Copy package.json và package-lock.json để cài đặt dependencies
+# Copy package.json và package-lock.json vào container
 COPY package*.json ./
 
-# Cài đặt dependencies
+# Cài đặt các dependency
 RUN npm install
 
-# Copy toàn bộ mã nguồn vào container
+# Copy phần còn lại của mã nguồn
 COPY . .
 
-# Build ứng dụng
+# Chạy build ứng dụng Angular
 RUN npm run build --prod
