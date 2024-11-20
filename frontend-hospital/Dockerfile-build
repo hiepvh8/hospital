@@ -1,20 +1,19 @@
-# Sử dụng Node.js phiên bản mới nhất hỗ trợ Angular
 FROM node:18-alpine
 
-# Chuyển đến thư mục ứng dụng trong container
+# Chuyển đến thư mục làm việc trong container
 WORKDIR /app
 
-# Copy package.json và package-lock.json (hoặc yarn.lock nếu dùng Yarn)
+# Copy package.json và package-lock.json vào container
 COPY package*.json ./
 
 # Cài đặt các dependencies của dự án
 RUN npm install
 
-RUN npm install -g @angular/cli
-
-# Copy phần còn lại của mã nguồn
+# Copy phần còn lại của mã nguồn vào container
 COPY . .
 
-# Chạy build ứng dụng Angular và tạo thư mục dist/
-RUN npm run build --prod
+# Cài đặt Angular CLI
+RUN npm install -g @angular/cli
 
+# Chạy build ứng dụng Angular
+RUN npm run build --prod
