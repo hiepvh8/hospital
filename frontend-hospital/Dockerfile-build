@@ -1,19 +1,21 @@
-FROM node:18.19-alpine
-
-# Cài đặt Angular CLI toàn cục
-RUN npm install -g @angular/cli
+# Sử dụng Node.js phiên bản mới nhất hỗ trợ Angular
+FROM node:18-alpine
 
 # Chuyển đến thư mục ứng dụng trong container
 WORKDIR /app
 
-# Copy package.json và package-lock.json vào container
+# Copy package.json và package-lock.json (hoặc yarn.lock nếu dùng Yarn)
 COPY package*.json ./
 
 # Cài đặt các dependencies của dự án
-RUN npm install
+RUN npm install --omit=dev  # Hoặc npm install nếu bạn muốn cài cả devDependencies
 
 # Copy phần còn lại của mã nguồn
 COPY . .
 
-# Chạy build ứng dụng Angular
+# Chạy build ứng dụng Angular và tạo thư mục dist/
 RUN npm run build --prod
+
+# Tạo thư mục output để lưu trữ sản phẩm build
+# Cấu hình outputPath trong angular.json sẽ quyết định vị trí lưu trữ trong dist/
+# Thường là dist/<project-name>
