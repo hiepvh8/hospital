@@ -1,4 +1,5 @@
-FROM node:18-alpine
+# Sử dụng node:18-alpine làm base image để build ứng dụng
+FROM node:18-alpine AS build
 
 # Chuyển đến thư mục làm việc trong container
 WORKDIR /app
@@ -6,14 +7,16 @@ WORKDIR /app
 # Copy package.json và package-lock.json vào container
 COPY package*.json ./
 
-# Cài đặt các dependencies của dự án
+# Cài đặt các dependencies
 RUN npm install
 
-# Copy phần còn lại của mã nguồn vào container
-COPY . .
-
-# Cài đặt Angular CLI
+# Cài đặt Angular CLI toàn cục
 RUN npm install -g @angular/cli
 
-# Chạy build ứng dụng Angular
-RUN npm run build --prod
+# Sao chép mã nguồn vào container
+COPY . .
+
+# Build ứng dụng Angular cho môi trường production
+RUN ng build --configuration=production --output-path=/app/dist
+
+# Cấu hình container để build ứng dụng và mount kết quả vào thư mục của máy chủ
