@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  height: 100vh; /* Chiều cao của body là 100% chiều cao viewport */
+  margin: 0; /* Bỏ margin mặc định của body */
+}
+
+.login-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+h2 {
+  text-align: center;
+}
+
+a {
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.register-link a {
+  color: #4800ff;
+  text-decoration: none;
+}
+
+.banner-container {
+  position: relative;
+  width: 100vw; /* Chiều rộng toàn màn hình */
+  overflow: hidden; /* Đảm bảo không có phần nào của ảnh vượt quá container */
+}
+
+.banner-image {
+  width: 100%; /* Ảnh sẽ chiếm toàn bộ chiều ngang */
+  height: auto; /* Giữ tỷ lệ của ảnh */
+  display: block; /* Đảm bảo ảnh không có khoảng trắng dư thừa */
+}
+.overlay-div {
+  position: absolute; /* Định vị tuyệt đối */
+  top: 50%; /* Căn giữa theo chiều dọc */
+  left:15%; /* Căn giữa theo chiều ngang */
+  transform: translate(-50%,-50%); /* Dịch chuyển để chính giữa */
+  background-color: rgba(255, 255, 255, 0); /* Nền mờ cho overlay */
+  color: rgba(124, 112, 112, 0.944); /* Màu chữ trắng */
+  padding: 20px; /* Khoảng cách bên trong */
+  text-align: center; /* Căn giữa chữ */
+  border-radius: 8px; /* Bo góc cho overlay */
+}
+
+.choice {
+  margin-bottom: 10px; /* Thêm khoảng cách giữa các dòng */
+}

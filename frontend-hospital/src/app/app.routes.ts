@@ -7,6 +7,7 @@ import { MajorComponent } from './pages/major/major.component';
 import { DoctorComponent } from './pages/doctor/doctor.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesHospitalComponent } from './pages/servicesHospital/services.component';
+import { AppointmentComponent } from './pages/appointment/appointment.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'major', component: MajorComponent},
     { path: 'services', component: ServicesHospitalComponent},
     { path: 'doctor', component: DoctorComponent},
+    { path: 'appointment', component: AppointmentComponent},
 
 ];
 

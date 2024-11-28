@@ -23,6 +23,7 @@ export class ServiceTokenService {
 
   // Xóa token khỏi Local Storage
   removeToken(): void {
+    console.log('da nhay vao day');
     localStorage.removeItem(this.tokenKey);
   }
 
