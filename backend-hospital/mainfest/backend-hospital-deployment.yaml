@@ -4,7 +4,7 @@ metadata:
   labels:
     app: backend-hospital
   name: backend-hospital-deployment
-  namespace: hospital-product
+  namespace: envi-name
 spec:
   replicas: 1
   strategy:
@@ -20,7 +20,7 @@ spec:
     metadata:
       labels:
         app: backend-hospital
-      namespace: hospital-product
+      namespace: envi-name
     spec:
       containers:
         - image: dynamic-image
