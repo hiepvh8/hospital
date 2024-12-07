@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend-hospital
+  name: frontend-hospital-deployment
+  namespace: hospital-product
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: frontend-hospital
+  template:
+    metadata:
+      labels:
+        app: frontend-hospital
+      namespace: hospital-product
+    spec:
+      containers:
+        - image: hiepvh8/frontend-hospital:715fe69
+          imagePullPolicy: Always
+          name: frontend-hospital
+          ports:
+            - containerPort: 80
+              name: tcp
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: 500Mi
+            requests:
+              cpu: 200m
+              memory: 500Mi
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsGroup: 0
+            runAsUser: 0
