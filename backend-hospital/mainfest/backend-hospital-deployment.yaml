@@ -23,7 +23,7 @@ spec:
       namespace: hospital-product
     spec:
       containers:
-        - image: hiepvh8/backend-hospital:715fe69
+        - image: dynamic-image
           imagePullPolicy: Always
           name: backend-hospital
           ports:
