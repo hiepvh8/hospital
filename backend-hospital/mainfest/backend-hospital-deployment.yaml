@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: backend-hospital
+  name: backend-hospital-deployment
+  namespace: envi-name
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: backend-hospital
+  template:
+    metadata:
+      labels:
+        app: backend-hospital
+      namespace: envi-name
+    spec:
+      containers:
+        - image: dynamic-image
+          imagePullPolicy: Always
+          name: backend-hospital
+          ports:
+            - containerPort: 8080
+              name: tcp
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: 500Mi
+            requests:
+              cpu: 200m
+              memory: 500Mi
+          securityContext:
+            allowPrivilegeEscalation: true
+            runAsGroup: 0
+            runAsUser: 0
