@@ -4,7 +4,7 @@ metadata:
   labels:
     app: frontend-hospital
   name: frontend-hospital-deployment
-  namespace: hospital-product
+  namespace: envi-name
 spec:
   replicas: 1
   strategy:
@@ -20,10 +20,10 @@ spec:
     metadata:
       labels:
         app: frontend-hospital
-      namespace: hospital-product
+      namespace: envi-name
     spec:
       containers:
-        - image: hiepvh8/frontend-hospital:715fe69
+        - image: dynamic-image
           imagePullPolicy: Always
           name: frontend-hospital
           ports:
